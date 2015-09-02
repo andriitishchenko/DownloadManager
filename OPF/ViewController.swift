@@ -14,6 +14,8 @@ NSTableViewDataSource,NSTableViewDelegate{
     var dataProvider:DataSource!
     var savePath:NSURL!
     var fileManager : NSFileManager!
+    var sourceOpened:Bool = false
+    var isProcessing:Bool = false
     
     @IBOutlet var labelSavePath: NSTextField!
     @IBOutlet var tableView: NSTableView!
@@ -50,11 +52,23 @@ NSTableViewDataSource,NSTableViewDelegate{
         }
     }
     
+    override func viewWillDisappear() {
+        super.viewWillDisappear()
+        if (self.dataProvider == nil || self.dataProvider.dataSource?.count == 0)
+        {
+            self.view.window?.releasedWhenClosed = true
+            self.view.window?.close()
+            var a:AppDelegate = NSApplication.sharedApplication().delegate as! AppDelegate
+            a.killWindod(self.view.window!)
+        }
+    }
+    
     @IBAction func buttonStartCLick(sender: AnyObject) {
+
         
-        if (self.savePath != nil){
+        if (self.savePath != nil && !self.isProcessing){
             for (var index:Int=0; index<self.dataProvider!.dataSource!.count; index++){
-            
+            self.isProcessing = true
                 let item:DownloadItem = self.dataProvider!.dataSource![index] as DownloadItem
                 
                 self.downloader.download(item,index:index) { obj in
@@ -93,12 +107,9 @@ NSTableViewDataSource,NSTableViewDelegate{
                 self.tableView.reloadData()
                 println("reloaded")
             })
-            
-            
         }
         else
         {
-            //Alert Error
             tableView.reloadData()
         }
         
@@ -162,6 +173,8 @@ NSTableViewDataSource,NSTableViewDelegate{
     
     func selectSavePath()
     {
+        if self.sourceOpened == true {return}
+        self.sourceOpened = true
         let savePanel = NSOpenPanel()
         savePanel.canCreateDirectories = true
         savePanel.canChooseDirectories = true
@@ -173,8 +186,27 @@ NSTableViewDataSource,NSTableViewDelegate{
                 self.savePath =  savePanel.URL
                 self.labelSavePath.stringValue = self.savePath.path!
             }
+            self.sourceOpened == false
         }
-
+    }
+    
+    func openFile()
+    {
+        let savePanel = NSOpenPanel()
+        savePanel.canCreateDirectories = false
+        savePanel.canChooseDirectories = false
+        savePanel.canChooseFiles = true
+        savePanel.allowsMultipleSelection = false
+        
+        savePanel.beginWithCompletionHandler { (result: Int) -> Void in
+            if result == NSFileHandlingPanelOKButton {
+                
+                self.NSDragViewOnNewFile(savePanel.URL?.path)
+//                self.savePath =  savePanel.URL
+//                self.labelSavePath.stringValue = self.savePath.path!
+            }
+            self.sourceOpened == false
+        }
     }
 
     
@@ -190,6 +222,8 @@ NSTableViewDataSource,NSTableViewDelegate{
                                                 columnIndexes: NSIndexSet(indexesInRange: NSMakeRange(0, 2))
             )
     }
+    
+    
     
 }
 

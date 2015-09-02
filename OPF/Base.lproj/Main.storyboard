@@ -69,7 +69,7 @@ Gw
 </string>
                                             <modifierMask key="keyEquivalentModifierMask"/>
                                             <connections>
-                                                <action selector="test:" target="Voe-Tx-rLC" id="yAc-fA-OCL"/>
+                                                <action selector="openDocument:" target="Voe-Tx-rLC" id="1PF-cq-dj7"/>
                                             </connections>
                                         </menuItem>
                                         <menuItem title="Open Recent" id="tXI-mr-wws">
@@ -648,12 +648,12 @@ Gw
                 <customObject id="Voe-Tx-rLC" customClass="AppDelegate" customModule="OPF" customModuleProvider="target"/>
                 <customObject id="Ady-hI-5gd" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="35.5" y="-33"/>
+            <point key="canvasLocation" x="62.5" y="-39"/>
         </scene>
         <!--Window Controller-->
         <scene sceneID="R2V-B0-nI4">
             <objects>
-                <windowController id="B8D-0N-5wS" sceneMemberID="viewController">
+                <windowController storyboardIdentifier="WindowController" id="B8D-0N-5wS" customClass="WindowController" customModule="OPF" customModuleProvider="target" sceneMemberID="viewController">
                     <window key="window" title="Simple Downloader" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" oneShot="NO" releasedWhenClosed="NO" showsToolbarButton="NO" visibleAtLaunch="NO" animationBehavior="default" id="IQv-IB-iLA">
                         <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
                         <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
@@ -671,7 +671,7 @@ Gw
         <!--Current-->
         <scene sceneID="kWd-rj-Vmi">
             <objects>
-                <viewController title="Current" showSeguePresentationStyle="single" id="TUi-n1-3EH" customClass="ViewController" customModule="OPF" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Current" storyboardIdentifier="ViewController" showSeguePresentationStyle="single" id="TUi-n1-3EH" customClass="ViewController" customModule="OPF" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" id="KgM-LW-epu" customClass="NSDragView" customModule="OPF" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="480" height="270"/>
                         <autoresizingMask key="autoresizingMask"/>

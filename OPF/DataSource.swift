@@ -96,7 +96,15 @@ class DataSource {
                     
                     buffer.length = 0
 //                    let item = DownloadItem(line! as String)
-                    self.dataSource?.append(DownloadItem(line! as String))
+                    let element:DownloadItem
+//                    do {
+                        element = DownloadItem(line! as String)
+//                    } catch _ {
+//                        continue;
+//                    }
+                    self.dataSource?.append(element)
+                    
+//                    self.dataSource?.append(element)
 //                    self.dataSource!.addObject(DownloadItem(line! as String))
 //                    self.dataSource!.addObject(item)
                     

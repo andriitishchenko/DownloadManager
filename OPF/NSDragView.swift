@@ -41,8 +41,8 @@ NSDraggingSource, NSDraggingDestination, NSPasteboardItemDataProvider {
         //        appDelegate.setLocalSourceUrl(NSURL.URLFromPasteboard(pboard))
         
         if let board = sender.draggingPasteboard().propertyListForType("NSFilenamesPboardType") as? NSArray {
-            if let imagePath = board[0] as? String {
-                    self.delegate?.NSDragViewOnNewFile(imagePath)
+            if let filePath = board[0] as? String {
+                    self.delegate?.NSDragViewOnNewFile(filePath)
                 return true
             }
         }

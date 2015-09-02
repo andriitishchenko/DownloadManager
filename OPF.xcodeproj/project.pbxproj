@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4A2581EE1B971952005D8800 /* WindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A2581ED1B971952005D8800 /* WindowController.swift */; };
+		4A2581F01B97213E005D8800 /* Credits.html in Resources */ = {isa = PBXBuildFile; fileRef = 4A2581EF1B97213E005D8800 /* Credits.html */; };
 		4A4043561B9454F90097898D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A4043551B9454F90097898D /* AppDelegate.swift */; };
 		4A4043581B9454F90097898D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A4043571B9454F90097898D /* ViewController.swift */; };
 		4A40435A1B9454F90097898D /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4A4043591B9454F90097898D /* Images.xcassets */; };
@@ -29,6 +31,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		4A2581ED1B971952005D8800 /* WindowController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WindowController.swift; sourceTree = "<group>"; };
+		4A2581EF1B97213E005D8800 /* Credits.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = Credits.html; sourceTree = "<group>"; };
 		4A4043501B9454F90097898D /* OPF.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OPF.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4A4043541B9454F90097898D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4A4043551B9454F90097898D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -85,6 +89,7 @@
 			children = (
 				4A4043551B9454F90097898D /* AppDelegate.swift */,
 				4A4043571B9454F90097898D /* ViewController.swift */,
+				4A2581ED1B971952005D8800 /* WindowController.swift */,
 				4A4043781B94C1050097898D /* DownloadManager.swift */,
 				4A40437A1B95E7340097898D /* Extentions.swift */,
 				4A4043741B948A820097898D /* DataSource.swift */,
@@ -99,6 +104,7 @@
 		4A4043531B9454F90097898D /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				4A2581EF1B97213E005D8800 /* Credits.html */,
 				4A4043541B9454F90097898D /* Info.plist */,
 			);
 			name = "Supporting Files";
@@ -203,6 +209,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4A40435A1B9454F90097898D /* Images.xcassets in Resources */,
+				4A2581F01B97213E005D8800 /* Credits.html in Resources */,
 				4A40435D1B9454F90097898D /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -224,6 +231,7 @@
 				4A4043581B9454F90097898D /* ViewController.swift in Sources */,
 				4A4043791B94C1050097898D /* DownloadManager.swift in Sources */,
 				4A4043731B9482DE0097898D /* NSDragView.swift in Sources */,
+				4A2581EE1B971952005D8800 /* WindowController.swift in Sources */,
 				4A4043751B948A820097898D /* DataSource.swift in Sources */,
 				4A4043561B9454F90097898D /* AppDelegate.swift in Sources */,
 				4A40437B1B95E7340097898D /* Extentions.swift in Sources */,
