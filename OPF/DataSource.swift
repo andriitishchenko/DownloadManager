@@ -9,29 +9,43 @@
 import Cocoa
 
 
+//enum AwfulError: ErrorType {
+//    case Bad
+//    case Worse
+//    case Terrible
+//}
+
 class DownloadItem:NSObject {
     let stringURL:String
-    var temporaryURL:NSURL?
-    var progress:Double
+    var temporaryURL:NSURL? = nil
+    var progress:Double = 0.0
     var error:NSError?
-    var size:Double
+    var size:Double = 0.0
     let filename:String
-    init(_ stringURL:String){
+    
+//    init (_ stringURL:String) throws { // throws
+    init (_ stringURL:String) { // throws
         self.stringURL = stringURL;
         self.progress = 0.0;
         self.size = 0.0;
         self.error = nil;
-        if( ((stringURL.lastPathComponent as String?) != nil) && (count(stringURL.pathExtension) == 3)){
-            self.filename=stringURL.lastPathComponent
-        }
-        else
-        {
-            let url = NSURL(string:stringURL)
-            self.filename = url!.lastPathComponent!
-        }
-        
-        
-        self.temporaryURL = nil;
+    
+//        do {
+            if( ((stringURL.lastPathComponent as String?) != nil) && (count(stringURL.pathExtension) == 3)){
+                self.filename=stringURL.lastPathComponent
+            }
+            else
+            {
+                let url = NSURL(string:stringURL)
+                self.filename = url!.lastPathComponent!
+            }
+
+//        } catch {
+//            self.filename = ""
+//    
+//            var e = NSException(name:"name", reason:"reason", userInfo:nil)
+//            e.raise()
+//        }
     }
 }
 
@@ -97,11 +111,14 @@ class DataSource {
                     buffer.length = 0
 //                    let item = DownloadItem(line! as String)
                     let element:DownloadItem
+                    
 //                    do {
-                        element = DownloadItem(line! as String)
-//                    } catch _ {
+                         element = DownloadItem(line! as String)
+//                    } catch {
+//                        print(1);
 //                        continue;
 //                    }
+                    
                     self.dataSource?.append(element)
                     
 //                    self.dataSource?.append(element)
